@@ -1,4 +1,4 @@
-import Parent from "./Components/ParentToChildData/Parent";
+import Parent from "./Components/ChildToParent/Parent";
 
 import "./App.css";
 function App() {
