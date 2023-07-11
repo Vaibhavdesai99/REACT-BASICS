@@ -1,12 +1,11 @@
-import Parent from "./Components/ChildToParent/Parent";
-
+import Timer from "./Components/Timer/Timer";
 import "./App.css";
+
 function App() {
   return (
     <>
       <div className="App">
-        I am Super Parent
-        <Parent />
+        <Timer />
       </div>
     </>
   );
