@@ -25,6 +25,10 @@ const Fetchapi = () => {
     return ele.title.toLowerCase().includes(search.toLocaleLowerCase());
   });
 
+  const deleteItem = (id) => {
+    const filter = data.filter((item) => item.id !== id);
+    setData(filter);
+  };
   return (
     <>
       <div>Fetchapi</div>
@@ -33,6 +37,7 @@ const Fetchapi = () => {
         return (
           <div key={ele.id}>
             <div>{ele.title}</div>
+            <button onClick={() => deleteItem(ele.id)}>Delete Item </button>
           </div>
         );
       })}
