@@ -2,9 +2,9 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import ListGroup from "react-bootstrap/ListGroup";
 
-const TodoList = ({ passToTodoList }) => {
-  const DeleteTodo = (i) => {
-    const updatedTodo = passToTodoList.filter((id) => id !== i);
+const TodoList = ({ passToTodoList, deleteTodo }) => {
+  const handleDelete = (index) => {
+    deleteTodo(index);
   };
 
   return (
@@ -18,10 +18,10 @@ const TodoList = ({ passToTodoList }) => {
         padding: "10px 10px",
       }}
     >
-      {passToTodoList.map((todoItem, i) => {
+      {passToTodoList.map((todoItem, index) => {
         return (
           <div
-            key={i}
+            key={index}
             className="todolistrendering"
             style={{
               display: "flex",
@@ -35,7 +35,7 @@ const TodoList = ({ passToTodoList }) => {
             <ListGroup.Item style={{ padding: "10px 90px" }}>
               {todoItem}
             </ListGroup.Item>
-            <Button variant="danger" onClick={() => DeleteTodo(i)}>
+            <Button variant="danger" onClick={() => handleDelete(index)}>
               Delete
             </Button>
           </div>
