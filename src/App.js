@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import Fetchapi from "./Components/APIFetching/Fetchapi";
+import ApiTrial from "./Components/APITRIAL/ApiTrial";
 const App = () => {
   return (
     <div className="App">
+      <ApiTrial />
       <div>app</div>
-      <Fetchapi />
     </div>
   );
 };

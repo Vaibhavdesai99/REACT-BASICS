@@ -1,34 +1,34 @@
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import { Button } from "react-bootstrap";
 
 const Todo = (props) => {
-  const [todo, setTodo] = useState("");
+  const [text, settext] = useState("");
 
-  const todoAddhere = (e) => {
-    setTodo(e.target.value);
+  const inputText = (e) => {
+    settext(e.target.value);
   };
 
-  const submitTodo = (e) => {
+  //craeted separate object : and id :
+  const id = Math.random();
+  const obj = {
+    text,
+    id,
+  };
+
+  // form submit handler :
+  const formDataSubmited = (e) => {
     e.preventDefault();
-    props.onPassTodo(todo);
+    props.onTodo(obj);
+    settext("");
   };
   return (
-    <Form onSubmit={submitTodo}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label> Add your TODO here</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter Todo"
-          onChange={todoAddhere}
-        />
-        <Form.Text className="text-muted"></Form.Text>
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <>
+      <form onSubmit={formDataSubmited}>
+        <h1>Add Your Todo Here</h1>
+        <label>Todo add </label>
+        <input type="text" onChange={inputText} />
+        <button type="submit">Add</button>
+      </form>
+    </>
   );
 };
-
 export default Todo;
