@@ -4,6 +4,7 @@ const Fetchapi = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
 
+  //API fetching :-
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
