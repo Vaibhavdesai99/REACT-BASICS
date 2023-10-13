@@ -3,6 +3,7 @@ import Todo from "./Components/Todo";
 import Todolist from "./Components/Todolist";
 import "./styles.css";
 
+//Lifting the state up
 export default function App() {
   const [todoData, setTodoData] = useState([]);
 
